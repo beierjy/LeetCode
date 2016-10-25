@@ -8,3 +8,52 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
 
 Subscribe to see which companies asked this question
 */
+#include <string>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int lengthOfLongestSubstring(string s){
+	if (s.size() == 0)
+		return 0;
+	if (s.size() == 1)
+		return 1;
+	int max = 1;
+	int start = 0;
+	int end = 0;
+	int now = 1;
+	int gap = 1;
+	while (now <= s.size()){
+		gap = end - start + 1;
+		if (gap > max && s[end]!=s[start])
+			max = gap;
+		for (int i = end; i >= start&&now<s.size(); i--){
+			if (s[now] == s[i]){
+				start = i + 1;
+				break;
+			}
+		}
+		end = now;
+		now++;
+	}
+	return max;
+}
+//ÓÅ»¯ºó
+int lengthOfLongestSubstring_1(string s){
+	vector<int> ivec(256, -1);
+	int max_len = 0;
+	int start = -1;
+	for (int i = 0; i < s.size(); i++){
+		if (ivec[s[i]]>start)
+			start = ivec[s[i]];
+		ivec[s[i]] = i;
+		max_len = (max_len > i - start) ? max_len : i - start;
+	}
+	return max_len;
+}
+void test(){
+	string s = "auua";
+	int res = lengthOfLongestSubstring_1(s);
+	cout << res << endl;
+}
