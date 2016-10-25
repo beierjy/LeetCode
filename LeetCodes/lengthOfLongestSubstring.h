@@ -39,14 +39,14 @@ int lengthOfLongestSubstring(string s){
 	}
 	return max;
 }
-//优化,利用hash表方法
+//optimization using the method of hash table
 int lengthOfLongestSubstring_1(string s){
 	vector<int> ivec(256, -1);
 	int max_len = 0;
 	int start = -1;
 	for (int i = 0; i < s.size(); i++){
 		if (ivec[s[i]]>start)
-			start = ivec[s[i]];
+			start = ivec[s[i]];//note the first position of a single character
 		ivec[s[i]] = i;
 		max_len = (max_len > i - start) ? max_len : i - start;
 	}
