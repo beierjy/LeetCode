@@ -40,6 +40,8 @@ int lengthOfLongestSubstring(string s){
 	return max;
 }
 //优化,利用hash表方法
+
+>>>>>>> c383d5957de79149e502ad58fb124c1149e85c96
 int lengthOfLongestSubstring_1(string s){
 	vector<int> ivec(256, -1);
 	int max_len = 0;
