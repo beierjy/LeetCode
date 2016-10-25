@@ -39,7 +39,7 @@ int lengthOfLongestSubstring(string s){
 	}
 	return max;
 }
-//ÓÅ»¯ºó
+//ä¼˜åŒ–
 int lengthOfLongestSubstring_1(string s){
 	vector<int> ivec(256, -1);
 	int max_len = 0;
