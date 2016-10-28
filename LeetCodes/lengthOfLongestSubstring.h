@@ -52,7 +52,7 @@ int lengthOfLongestSubstring_1(string s){
 	}
 	return max_len;
 }
-void test(){
+void Test(){
 	string s = "auua";
 	int res = lengthOfLongestSubstring_1(s);
 	cout << res << endl;

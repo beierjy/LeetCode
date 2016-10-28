@@ -1,7 +1,10 @@
-#include "lengthOfLongestSubstring.h"
+#include "MedianOfTwoSortedArrays.h"
+#include <iostream>
+
+using namespace std;
 
 int main(){
-	test();
+	Test();
 	system("pause");
 	return 0;
 }
